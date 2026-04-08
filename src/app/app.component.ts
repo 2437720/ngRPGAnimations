@@ -13,6 +13,7 @@ export class AppComponent {
   }
 
   spawn() {
+    this.showSlime();
     this.slimeIsPresent = true;
     // TODO Animation angular avec forwards
   }
@@ -31,5 +32,11 @@ export class AppComponent {
 
   hit(){
     // TODO Utilisé Animista pour faire une animation différente avec css (wobble)
+  }
+
+  showSlime(){
+    var element = document.getElementById("slimeyId");
+    element?.classList.add("fadeOut");
+    element?.classList.add("fadeIn");
   }
 }
