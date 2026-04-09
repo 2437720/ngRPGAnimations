@@ -16,11 +16,13 @@ export class AppComponent {
     this.showSlime();
     this.slimeIsPresent = true;
     // TODO Animation angular avec forwards
+
   }
 
   death(){
     this.slimeIsPresent = false;
     // TODO Animation angular avec forwards
+    this.hideSlime();
 
     // TODO 2e animation angular en même temps
   }
@@ -36,7 +38,15 @@ export class AppComponent {
 
   showSlime(){
     var element = document.getElementById("slimeyId");
-    element?.classList.add("fadeOut");
+    element?.classList.remove("fadeOut");
     element?.classList.add("fadeIn");
+  }
+
+  hideSlime(){
+    var element = document.getElementById("slimeyId");
+
+    element?.classList.remove("fadeIn");
+    element?.classList.add("fadeOut");
+
   }
 }
